@@ -1,0 +1,35 @@
+TH DHCP-STATS 1 "November 2023" "DHCP Statistics Analyzer Manual"
+
+.SH NAME
+dhcp-stats \- Analyze DHCP traffic and provide IP address allocation statistics
+
+.SH DESCRIPTION
+\fBdhcp-stats\fP is a program that analyzes DHCP traffic, tracks allocated IPs, and calculates utilization percentages for specified IP prefixes.
+
+.SH OPTIONS
+.TP
+.B \-r, \-\-file \fIFILE\fP
+Analyze DHCP traffic from the specified pcap file (\fIFILE\fP).
+
+.TP
+.B \-i, \-\-interface \fIINTERFACE\fP
+Perform live capture on the specified network interface (\fIINTERFACE\fP).
+
+.SH IP PREFIX
+One or more IP prefixes (in CIDR notation) to monitor for IP address allocations.
+
+.SH EXAMPLES
+Analyzing a pcap file:
+.BR dhcp-stats -r sample.pcap 192.168.1.0/24 10.0.0.0/16
+
+Live capture on an interface:
+.BR dhcp-stats -i eth0 192.168.1.0/24 10.0.0.0/16
+
+.SH AUTHOR
+Zdebska Kateryna (Login: xzdebs00)
+
+.SH BUGS
+No known bugs.
+
+.SH DATE
+November 2023
